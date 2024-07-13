@@ -1,12 +1,12 @@
 import "./Sidebar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Sidebar = ({home, users, todos}) => {
   return (
     <div className="sidebar">
       <nav className="nav"> 
-        <Link to="/home">{home}</Link>
-        <Link to="/users">{users}</Link>
-        <Link to="/todos">{todos}</Link>
+        <NavLink to="/home" className={navData => navData.isActive ? "active" : "item"}>{home}</NavLink>
+        <NavLink to="/users" className={navData => navData.isActive ? "active" : "item"}>{users}</NavLink>
+        <NavLink to="/todos" className={navData => navData.isActive ? "active" : "item"}>{todos}</NavLink>
       </nav>
     </div>
   );
