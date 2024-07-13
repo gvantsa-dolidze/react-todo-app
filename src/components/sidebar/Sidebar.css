@@ -1,5 +1,6 @@
 .sidebar{
     background-color: bisque;
+    grid-area: sidebar;
 }
 .nav {
     display: flex;

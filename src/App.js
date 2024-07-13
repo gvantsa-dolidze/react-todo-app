@@ -8,13 +8,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Sidebar home="Home" 
-               users="Users" 
-               todos="Todos" 
-               />
-      <Home />
-      <Todos />
-      <Users />
+      <Sidebar 
+             home="Home"  
+             users="Users" 
+             todos="Todos" 
+             />
+      <div className="wrapper">
+          <Home />
+          <Todos />
+          <Users />
+      </div>
     </div>
   );
 }

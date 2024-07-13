@@ -1,0 +1,12 @@
+.App {
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'sidebar wrapper';
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 50px 1fr;
+}
+.wrapper {
+    grid-area: wrapper;
+}
