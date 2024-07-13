@@ -4,19 +4,18 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Home from "./components/home/Home";
 import Todos from "./components/todos/Todos";
 import Users from "./components/users/Users";
+import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Header />
-      <Sidebar 
-             home="Home"  
-             users="Users" 
-             todos="Todos" 
-             />
+      <Sidebar home="Home" users="Users" todos="Todos" />
       <div className="wrapper">
-          <Home />
-          <Todos />
-          <Users />
+        <Routes>
+          <Route path='/home'  element={<Home />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/todos' element={<Todos />} />
+        </Routes>
       </div>
     </div>
   );
