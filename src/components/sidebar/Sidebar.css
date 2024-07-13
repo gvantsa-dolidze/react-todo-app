@@ -1,3 +1,7 @@
 .sidebar{
     background-color: bisque;
 }
+.nav {
+    display: flex;
+    flex-direction: column;
+}
