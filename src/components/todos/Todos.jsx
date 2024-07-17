@@ -24,12 +24,15 @@ const Todos = () => {
   ]);
 
   const addTodo = () => {
-    const newTodo = {
-      title: text,
-      id: 4,
-      completed: false,
-    };
-    setTodos([...todos, newTodo]);
+    if (text.trim() !== "") {
+      const newTodo = {
+        title: text,
+        id: todos.length + 1,
+        completed: false,
+      };
+      setTodos([...todos, newTodo]);
+      setText("");
+    }
   };
   return (
     <div className="todos">
