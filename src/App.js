@@ -12,7 +12,7 @@ function App() {
       <Sidebar home="Home" users="Users" todos="Todos" />
       <div className="wrapper">
         <Routes>
-          <Route path='/home'  element={<Home />} />
+          <Route path='/'  element={<Home />} />
           <Route path='/users' element={<Users />} />
           <Route path='/todos' element={<Todos />} />
         </Routes>
