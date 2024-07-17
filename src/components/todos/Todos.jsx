@@ -1,7 +1,11 @@
 import "./Todos.css";
 import Todo from "./Todo";
+import { useState } from "react";
+
 const Todos = () => {
-  const todos = [
+  const [text, setText] = useState("");
+
+  const [todos, setTodos] = useState([
     {
       title: "Do Homework",
       id: 1,
@@ -17,14 +21,27 @@ const Todos = () => {
       id: 3,
       completed: false,
     },
-  ];
+  ]);
 
+  const addTodo = () => {
+    const newTodo = {
+      title: text,
+      id: 4,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+  };
   return (
     <div className="todos">
       <label>
-        <input placeholder="Write your todo here" />
+        <input
+          value={text}
+          placeholder="Write your todo here"
+          onChange={(e) => setText(e.target.value)}
+        />
       </label>
-      <button>Add Todo</button>
+      <button onClick={addTodo}>Add Todo</button>
+      <div></div>
       <div>
         {todos.map((todo) => (
           <Todo
