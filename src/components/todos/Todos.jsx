@@ -3,9 +3,7 @@ import Todo from "./Todo";
 import { useState } from "react";
 
 const Todos = () => {
-  const [text, setText] = useState("");
-
-  const [todos, setTodos] = useState([
+  const todos = [
     {
       title: "Do Homework",
       id: 1,
@@ -21,30 +19,14 @@ const Todos = () => {
       id: 3,
       completed: false,
     },
-  ]);
+  ];
 
-  const addTodo = () => {
-    if (text.trim() !== "") {
-      const newTodo = {
-        title: text,
-        id: todos.length + 1,
-        completed: false,
-      };
-      setTodos([...todos, newTodo]);
-      setText("");
-    }
-  };
   return (
     <div className="todos">
       <label>
-        <input
-          value={text}
-          placeholder="Write your todo here"
-          onChange={(e) => setText(e.target.value)}
-        />
+        <input placeholder="Write your todo here" />
       </label>
-      <button onClick={addTodo}>Add Todo</button>
-      <div></div>
+      <button>Add Todo</button>
       <div>
         {todos.map((todo) => (
           <Todo
