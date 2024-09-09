@@ -1,22 +1,21 @@
 import "./Todos.css";
 import Todo from "./Todo";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo } from "../../store/todosSlice";
 
 const Todos = () => {
+  const [text, setText] = useState("");
+  const todos = useSelector((state) => state.todosPage.todos);
+  const dispatch = useDispatch();
 
-  
-    
-
-  const addTodo = () => {
+  const handleAddTodo = () => {
     if (text.trim() !== "") {
-      const newTodo = {
-        title: text,
-        id: todos.length + 1,
-        completed: false,
-      };
-      setTodos([...todos, newTodo]);
+      dispatch(addTodo(text));
       setText("");
     }
   };
+
   return (
     <div className="todos">
       <label>
@@ -26,7 +25,7 @@ const Todos = () => {
           onChange={(e) => setText(e.target.value)}
         />
       </label>
-      <button onClick={addTodo}>Add Todo</button>
+      <button onClick={handleAddTodo}>Add Todo</button>
       <div></div>
       <div>
         {todos.map((todo) => (
