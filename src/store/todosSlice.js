@@ -24,7 +24,7 @@ const todosSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const newTodo = {
-        title: action.text,
+        title: action.payload,
         id: state.todos.length + 1,
         completed: false,
       };
