@@ -1,27 +1,10 @@
 import "./Todos.css";
 import Todo from "./Todo";
-import { useState } from "react";
 
 const Todos = () => {
-  const [text, setText] = useState("");
 
-  const [todos, setTodos] = useState([
-    {
-      title: "Do Homework",
-      id: 1,
-      completed: false,
-    },
-    {
-      title: "Do Housework",
-      id: 2,
-      completed: true,
-    },
-    {
-      title: "Go Shopping",
-      id: 3,
-      completed: false,
-    },
-  ]);
+  
+    
 
   const addTodo = () => {
     if (text.trim() !== "") {
